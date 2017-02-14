@@ -46,7 +46,7 @@
             <!-- Modal d'ajout de circuit -->
             <div id="addCircuitModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
-                    <form method="POST" action="./">
+                    <form method="POST" action="index.php?action=insertCircuit&view=createCircuit">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
