@@ -42,3 +42,23 @@ function insert_lieu($nom, $ville, $pays, $descriptif, $prixVisite) {
     global $connection;
     $connection->prepare($query)->execute([$nom, $ville, $pays, $descriptif, $prixVisite]);
 }
+
+
+
+/// Récupération des données de la database
+
+function select_clients() {
+    $query = "SELECT * FROM Client";
+    global $connection;
+    return $connection->prepare($query)->execute();
+}
+function select_circuits() {
+    $query = "SELECT * FROM Circuit";
+    global $connection;
+    return $connection->prepare($query)->execute();
+}
+function select_lieux() {
+    $query = "SELECT * FROM LieuAVisiter";
+    global $connection;
+    return $connection->prepare($query)->execute();
+}

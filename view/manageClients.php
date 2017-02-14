@@ -28,7 +28,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <?php $clients = select_clients();
+                    foreach($clients as $client) {
+                        echo "<td>" . $client["id"] . "</td>";
+                        echo "<td>" . $client["nom"] . "</td>";
+                        echo "<td>" . $client["prenom"] . "</td>";
+                        echo "<td>" . $client["datedenaissance"] . "</td>";
+                        echo "<td></td>";
+                    } ?>
                 </tbody>
             </table>
             

@@ -35,7 +35,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <?php $circuits = select_circuits();
+                    foreach($circuits as $circuit) {
+                        echo "<td>" . $circuit["id"] . "</td>";
+                        echo "<td>" . $circuit["descriptif"] . "</td>";
+                        echo "<td>" . $circuit["villedepart"] . "</td>";
+                        echo "<td>" . $circuit["paysdepart"] . "</td>";
+                        echo "<td>" . $circuit["villearrivee"] . "</td>";
+                        echo "<td>" . $circuit["paysarrivee"] . "</td>";
+                        echo "<td>" . $circuit["duree"] . "</td>";
+                        echo "<td>" . $circuit["nbrplacedisponible"] . "</td>";
+                        echo "<td>" . $circuit["prixinscription"] . "</td>";
+                        echo "<td></td>";
+                    } ?>
                 </tbody>
             </table>
             

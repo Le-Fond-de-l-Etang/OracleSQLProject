@@ -1,10 +1,12 @@
 <?php
 
+require_once("requests.php");
+var_dump(select_circuits(), select_clients(), select_lieux());
+
 $get = filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
 $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
 if (isset($get["action"])) {
-    require_once("requests.php");
     switch ($get["action"]) {
     case "insertClient":
         insert_client($post["client_nom"], $post["client_prenom"], $post["client_datedenaissance"]);

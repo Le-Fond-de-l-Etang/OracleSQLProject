@@ -33,7 +33,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <?php $lieux = select_lieux();
+                    foreach($lieux as $lieu) {
+                        echo "<td>" . $lieu["id"] . "</td>";
+                        echo "<td>" . $lieu["nomlieu"] . "</td>";
+                        echo "<td>" . $lieu["ville"] . "</td>";
+                        echo "<td>" . $lieu["pays"] . "</td>";
+                        echo "<td>" . $lieu["descriptif"] . "</td>";
+                        echo "<td>" . $lieu["prixvisite"] . "</td>";
+                        echo "<td></td>";
+                    } ?>
                 </tbody>
             </table>
             
