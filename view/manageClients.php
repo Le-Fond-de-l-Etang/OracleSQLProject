@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Circuit </title>
+        <title>Clients</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel=stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
         <style>
@@ -16,19 +16,14 @@
     <body>
         <div class="container">
             
-            <h2>Circuit </h2>
-            
-            <!-- Affichage en PHP des infos du circuit -->
-            
+            <h2>Liste des clients :</h2>
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Nom</th>
-                        <th>Ville</th>
-                        <th>Pays</th>
-                        <th>Descriptif</th>
-                        <th>Prix</th>
+                        <th>Prénom</th>
+                        <th>Date de naissance</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -37,55 +32,40 @@
                 </tbody>
             </table>
             
-            <div class="text-center"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addLieuModal">Ajouter un lieu</button></div>
+            <div class="text-center"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addClientModal">Ajouter un client</button></div>
             
             
             
-            <!-- Modal d'ajout de lieu -->
-            <div id="addLieuModal" class="modal fade" role="dialog">
+            <!-- Modal d'ajout de client -->
+            <div id="addClientModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
-                    <form method="POST" action="./">
+                    <form method="POST" action="index.php?action=insertClient&view=manageClients">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Ajout de lieu</h4>
+                                <h4 class="modal-title">Ajout de client</h4>
                             </div>
                             <div class="modal-body">
-                                <p>Renseignez les informations du lieu à ajouter ci-dessous.</p>
-                                <input type="hidden" name="action" value="addLieu">
+                                <p>Renseignez les informations du client à ajouter ci-dessous.</p>
 
                                     <div class="form-group">
-                                        <label for="lieu_nom" class="control-label col-md-4">Nom</label>
+                                        <label for="client_nom" class="control-label col-md-4">Nom</label>
                                         <div class="controls col-md-8 ">
-                                            <input required class="input-md  textinput textInput form-control" id="lieu_nom" maxlength="30" name="lieu_nom" type="text" />
+                                            <input required class="input-md  textinput textInput form-control" id="client_nom" maxlength="30" name="client_nom" type="text" />
                                         </div>
                                     </div>
                                 
                                     <div class="form-group">
-                                        <label for="lieu_ville" class="control-label col-md-4">Ville</label>
+                                        <label for="client_prenom" class="control-label col-md-4">Prénom</label>
                                         <div class="controls col-md-8 ">
-                                            <input required class="input-md  textinput textInput form-control" id="lieu_ville" maxlength="30" name="lieu_ville" type="text" />
+                                            <input required class="input-md  textinput textInput form-control" id="client_prenom" maxlength="30" name="client_prenom" type="text" />
                                         </div>
                                     </div>
                                 
                                     <div class="form-group">
-                                        <label for="lieu_pays" class="control-label col-md-4">Pays</label>
+                                        <label for="client_datedenaissance" class="control-label col-md-4">Date de naissance</label>
                                         <div class="controls col-md-8 ">
-                                            <input required class="input-md  textinput textInput form-control" id="lieu_pays" maxlength="30" name="lieu_pays" type="text" />
-                                        </div>
-                                    </div>
-                                
-                                    <div class="form-group">
-                                        <label for="lieu_descriptif" class="control-label col-md-4">Descriptif</label>
-                                        <div class="controls col-md-8 ">
-                                            <input required class="input-md  textinput textInput form-control" id="lieu_descriptif" maxlength="30" name="lieu_descriptif" type="text" />
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="lieu_prix" class="control-label col-md-4">Prix</label>
-                                        <div class="controls col-md-8 ">
-                                            <input required class="input-md  textinput textInput form-control" value="" id="lieu_prix" name="lieu_prix" type="number" step="0.01">
+                                            <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{2}/[0-9]{2}/[0-9]{2}" value="" data-date-format="dd/mm/yy" id="client_datedenaissance" name="client_datedenaissance" type="text">
                                         </div>
                                     </div>
                             </div>

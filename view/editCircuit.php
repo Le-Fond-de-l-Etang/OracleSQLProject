@@ -73,7 +73,7 @@
             <!-- Modal d'ajout de client au circuit -->
             <div id="addCircuitClientModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
-                    <form method="POST" action="./">
+                    <form method="POST" action="index.php?action=addReservation&view=editCircuit">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -81,19 +81,18 @@
                             </div>
                             <div class="modal-body">
                                 <p>Sélectionnez un client et la date de réservation à enregistrer :</p>
-                                <input type="hidden" name="action" value="addCircuitClient">
-
+                                
                                     <div class="form-group">
-                                        <label for="circuit_client" class="control-label col-md-4">Client</label>
+                                        <label for="reservation_client" class="control-label col-md-4">Client</label>
                                         <div class="controls col-md-8 ">
-                                            <select required class="input-md form-control" id="circuit_client" name="circuit_client" type="text"></select>
+                                            <select required class="input-md form-control" id="reservation_client" name="reservation_client" type="text"></select>
                                         </div>
                                     </div>
                                 
                                     <div class="form-group">
-                                        <label for="circuit_clientreservation" class="control-label col-md-4">Date de réservation</label>
+                                        <label for="reservation_date" class="control-label col-md-4">Date de réservation</label>
                                         <div class="controls col-md-8 ">
-                                            <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{2}/[0-9]{2}/[0-9]{2}" value="" data-date-format="dd/mm/yy" id="circuit_clientreservation" name="circuit_clientreservation" type="text">
+                                            <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{2}/[0-9]{2}/[0-9]{2}" value="" data-date-format="dd/mm/yy" id="reservation_date" name="reservation_date" type="text">
                                         </div>
                                     </div>
                                 
@@ -110,7 +109,7 @@
             <!-- Modal d'ajout d'étape au circuit -->
             <div id="addCircuitEtapeModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
-                    <form method="POST" action="./">
+                    <form method="POST" action="index.php?action=addEtape&view=editCircuit">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -118,31 +117,30 @@
                             </div>
                             <div class="modal-body">
                                 <p>Renseignez le lieu et les informations de l'étape :</p>
-                                <input type="hidden" name="action" value="addCircuitEtape">
 
                                     <div class="form-group">
-                                        <label for="circuit_etapelieu" class="control-label col-md-4">Lieu de l'étape :</label>
+                                        <label for="etape_lieu" class="control-label col-md-4">Lieu de l'étape :</label>
                                         <div class="controls col-md-8 ">
                                             <select required class="input-md form-control" id="circuit_etapelieu" name="circuit_etapelieu" type="text"></select>
                                         </div>
                                     </div>
                                 
                                     <div class="form-group">
-                                        <label for="circuit_etapedate" class="control-label col-md-4">Date de l'étape</label>
+                                        <label for="etape_date" class="control-label col-md-4">Date de l'étape</label>
                                         <div class="controls col-md-8 ">
                                             <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{2}/[0-9]{2}/[0-9]{2}" value="" data-date-format="dd/mm/yy" id="circuit_etapedate" name="circuit_etapedate" type="text">
                                         </div>
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label for="circuit_etapeduree" class="control-label col-md-4">Durée (heures)</label>
+                                        <label for="etape_duree" class="control-label col-md-4">Durée (heures)</label>
                                         <div class="controls col-md-8 ">
                                             <input required class="input-md  textinput textInput form-control" value="" id="circuit_etapeduree" name="circuit_etapeduree" type="number">
                                         </div>
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label for="circuit_etapeordre" class="control-label col-md-4">Ordre</label>
+                                        <label for="etape_ordre" class="control-label col-md-4">Ordre</label>
                                         <div class="controls col-md-8 ">
                                             <select required class="input-md form-control" id="circuit_etapeordre" name="circuit_etapeordre"></select>
                                         </div>
