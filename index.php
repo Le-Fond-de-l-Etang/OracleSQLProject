@@ -6,19 +6,19 @@ if (isset($get["action"])) {
     require_once("requests.php");
     switch ($get["action"]) {
     case "insertClient":
-        insert_client($get["client_nom"], $get["client_prenom"], $get["client_datedenaissance"]);
+        insert_client($post["client_nom"], $post["client_prenom"], $post["client_datedenaissance"]);
         break;
     case "insertReservation":
-        insert_reservation($get["reservation_circuit"], $get["reservation_client"], $get["reservation_date"]);
+        insert_reservation($post["reservation_circuit"], $post["reservation_client"], $post["reservation_date"]);
         break;
     case "insertCircuit":
-        insert_circuit($get["circuit_descriptif"], $get["circuit_villedepart"], $get["circuit_paysdepart"], $get["circuit_villearrivee"], $get["circuit_paysarrivee"], $get["circuit_datedepart"], $get["circuit_datearrivee"], $get["circuit_dure"], $get["circuit_places"], $get["circuit_prix"]);
+        insert_circuit($post["circuit_descriptif"], $post["circuit_villedepart"], $post["circuit_paysdepart"], $post["circuit_villearrivee"], $post["circuit_paysarrivee"], $post["circuit_datedepart"], $post["circuit_datearrivee"], $post["circuit_dure"], $post["circuit_places"], $post["circuit_prix"]);
         break;
     case "insertEtape":
-        insert_etape($get["etape_circuit"], $get["etape_lieu"], $get["etape_ordre"], $get["etape_date"], $get["etape_duree"]);
+        insert_etape($post["etape_circuit"], $post["etape_lieu"], $post["etape_ordre"], $post["etape_date"], $post["etape_duree"]);
         break;
     case "insertLieu":
-        insert_lieu($get["lieu_nom"], $get["lieu_ville"], $get["lieu_pays"], $get["lieu_descriptif"], $get["lieu_prix"]);
+        insert_lieu($post["lieu_nom"], $post["lieu_ville"], $post["lieu_pays"], $post["lieu_descriptif"], $post["lieu_prix"]);
         break;
     }
 }
