@@ -15,6 +15,7 @@
     </head>
     <body>
         <div class="container">
+            <span><a href="index.php">Index</a> > Clients</span>
             
             <h2>Liste des clients :</h2>
             <table class="table table-striped">
@@ -30,11 +31,13 @@
                 <tbody>
                     <?php $clients = select_clients();
                     foreach($clients as $client) {
+                        echo "<tr>";
                         echo "<td>" . $client["id"] . "</td>";
                         echo "<td>" . $client["nom"] . "</td>";
                         echo "<td>" . $client["prenom"] . "</td>";
                         echo "<td>" . $client["datedenaissance"] . "</td>";
-                        echo "<td></td>";
+                        echo "<td><a href='index.php?action=deleteClient&actionId=".$client["id"]."&view=manageClients'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></td>";
+                        echo "</tr>";
                     } ?>
                 </tbody>
             </table>
@@ -72,7 +75,7 @@
                                     <div class="form-group">
                                         <label for="client_datedenaissance" class="control-label col-md-4">Date de naissance</label>
                                         <div class="controls col-md-8 ">
-                                            <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{2}/[0-9]{2}/[0-9]{2}" value="" data-date-format="dd/mm/yy" id="client_datedenaissance" name="client_datedenaissance" type="text">
+                                            <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{4}/[0-9]{2}/[0-9]{2}" value="" data-date-format="yyyy/mm/dd" id="client_datedenaissance" name="client_datedenaissance" type="text">
                                         </div>
                                     </div>
                             </div>

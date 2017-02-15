@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Circuit </title>
+        <title>Lieux</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel=stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
         <style>
@@ -15,11 +15,9 @@
     </head>
     <body>
         <div class="container">
+            <span><a href="index.php">Index</a> > Lieux</span>
             
-            <h2>Circuit </h2>
-            
-            <!-- Affichage en PHP des infos du circuit -->
-            
+            <h2>Liste des lieux :</h2>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -36,12 +34,12 @@
                     <?php $lieux = select_lieux();
                     foreach($lieux as $lieu) {
                         echo "<td>" . $lieu["id"] . "</td>";
-                        echo "<td>" . $lieu["nomlieu"] . "</td>";
+                        echo "<td>" . $lieu["nomLieu"] . "</td>";
                         echo "<td>" . $lieu["ville"] . "</td>";
                         echo "<td>" . $lieu["pays"] . "</td>";
                         echo "<td>" . $lieu["descriptif"] . "</td>";
-                        echo "<td>" . $lieu["prixvisite"] . "</td>";
-                        echo "<td></td>";
+                        echo "<td>" . $lieu["prixVisite"] . "</td>";
+                        echo "<td><a href='index.php?action=deleteLieu&actionId=".$lieu["id"]."&view=manageLieux'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></td>";
                     } ?>
                 </tbody>
             </table>
