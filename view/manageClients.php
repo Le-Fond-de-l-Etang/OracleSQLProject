@@ -32,11 +32,11 @@
                     <?php $clients = select_clients();
                     foreach($clients as $client) {
                         echo "<tr>";
-                        echo "<td>" . $client["id"] . "</td>";
-                        echo "<td>" . $client["nom"] . "</td>";
-                        echo "<td>" . $client["prenom"] . "</td>";
-                        echo "<td>" . $client["datedenaissance"] . "</td>";
-                        echo "<td><a href='index.php?action=deleteClient&actionId=".$client["id"]."&view=manageClients'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></td>";
+                        echo "<td>" . $client["ID"] . "</td>";
+                        echo "<td>" . $client["NOM"] . "</td>";
+                        echo "<td>" . $client["PRENOM"] . "</td>";
+                        echo "<td>" . $client["DATEDENAISSANCE"] . "</td>";
+                        echo "<td><a href='index.php?action=deleteClient&actionId=".$client["ID"]."&view=manageClients'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></td>";
                         echo "</tr>";
                     } ?>
                 </tbody>
@@ -75,7 +75,7 @@
                                     <div class="form-group">
                                         <label for="client_datedenaissance" class="control-label col-md-4">Date de naissance</label>
                                         <div class="controls col-md-8 ">
-                                            <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{4}/[0-9]{2}/[0-9]{2}" value="" data-date-format="yyyy/mm/dd" id="client_datedenaissance" name="client_datedenaissance" type="text">
+                                            <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" value="" data-date-format="dd/mm/yyyy" id="client_datedenaissance" name="client_datedenaissance" type="text">
                                         </div>
                                     </div>
                             </div>

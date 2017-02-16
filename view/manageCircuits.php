@@ -39,18 +39,18 @@
                     <?php $circuits = select_circuits();
                     foreach($circuits as $circuit) {
                         echo "<tr>";
-                        echo "<td><a href='index.php?view=editCircuit&viewId=".$circuit["id"]."'>" . $circuit["id"] . "</a></td>";
-                        echo "<td>" . $circuit["descriptif"] . "</td>";
-                        echo "<td>" . $circuit["villedepart"] . "</td>";
-                        echo "<td>" . $circuit["paysdepart"] . "</td>";
-                        echo "<td>" . $circuit["villearrivee"] . "</td>";
-                        echo "<td>" . $circuit["paysarrivee"] . "</td>";
-                        echo "<td>" . $circuit["datedepart"] . "</td>";
-                        echo "<td>" . $circuit["datearrivee"] . "</td>";
-                        echo "<td>" . $circuit["duree"] . "</td>";
-                        echo "<td>" . $circuit["nbrplacedisponible"] . "</td>";
-                        echo "<td>" . $circuit["prixinscription"] . "</td>";
-                        echo "<td><a href='index.php?action=deleteCircuit&actionId=".$circuit["id"]."&view=manageCircuits'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></td>";
+                        echo "<td><a href='index.php?view=editCircuit&viewId=".$circuit["ID"]."'>" . $circuit["ID"] . "</a></td>";
+                        echo "<td>" . $circuit["DESCRIPTIF"] . "</td>";
+                        echo "<td>" . $circuit["VILLEDEPART"] . "</td>";
+                        echo "<td>" . $circuit["PAYSDEPART"] . "</td>";
+                        echo "<td>" . $circuit["VILLEARRIVEE"] . "</td>";
+                        echo "<td>" . $circuit["PAYSARRIVEE"] . "</td>";
+                        echo "<td>" . $circuit["DATEDEPART"] . "</td>";
+                        echo "<td>" . $circuit["DATEARRIVEE"] . "</td>";
+                        echo "<td>" . $circuit["DUREE"] . "</td>";
+                        echo "<td>" . $circuit["NBRPLACEDISPONIBLE"] . "</td>";
+                        echo "<td>" . $circuit["PRIXINSCRIPTION"] . "</td>";
+                        echo "<td><a href='index.php?action=deleteCircuit&actionId=".$circuit["ID"]."&view=manageCircuits'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></td>";
                         echo "</tr>";
                     } ?>
                 </tbody>
@@ -110,14 +110,14 @@
                                     <div class="form-group">
                                         <label for="circuit_datedepart" class="control-label col-md-4">Date de départ</label>
                                         <div class="controls col-md-8 ">
-                                            <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{4}/[0-9]{2}/[0-9]{2}" value="" data-date-format="yyyy/mm/dd" id="circuit_datedepart" name="circuit_datedepart" type="text">
+                                            <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" value="" data-date-format="dd/mm/yyyy" id="circuit_datedepart" name="circuit_datedepart" type="text">
                                         </div>
                                     </div>
                                 
                                     <div class="form-group">
                                         <label for="circuit_datearrivee" class="control-label col-md-4">Date d'arrivée</label>
                                         <div class="controls col-md-8 ">
-                                            <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{4}/[0-9]{2}/[0-9]{2}" value="" data-date-format="yyyy/mm/dd" id="circuit_datearrivee" name="circuit_datearrivee" type="text">
+                                            <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" value="" data-date-format="dd/mm/yyyy" id="circuit_datearrivee" name="circuit_datearrivee" type="text">
                                         </div>
                                     </div>
                                     

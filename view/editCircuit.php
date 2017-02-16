@@ -126,7 +126,7 @@
                                 <div class="form-group">
                                     <label for="reservation_date" class="control-label col-md-4">Date de réservation</label>
                                     <div class="controls col-md-8 ">
-                                        <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{4}/[0-9]{2}/[0-9]{2}" value="" data-date-format="yyyy/mm/dd" id="reservation_date" name="reservation_date" type="text">
+                                        <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" value="" data-date-format="dd/mm/yyyy" id="reservation_date" name="reservation_date" type="text">
                                     </div>
                                 </div>
                                 
@@ -169,7 +169,7 @@
                                 <div class="form-group">
                                     <label for="etape_date" class="control-label col-md-4">Date de l'étape</label>
                                     <div class="controls col-md-8 ">
-                                        <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{4}/[0-9]{2}/[0-9]{2}" value="" data-date-format="yyyy/mm/dd" id="etape_date" name="etape_date" type="text">
+                                        <input required class="datepicker input-md  textinput textInput form-control" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" value="" data-date-format="dd/mm/yyyy" id="etape_date" name="etape_date" type="text">
                                     </div>
                                 </div>
 

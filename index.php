@@ -14,7 +14,7 @@ if (isset($get["action"])) {
         insert_reservation($post["reservation_circuit"], $post["reservation_client"], $post["reservation_date"]);
         break;
     case "insertCircuit":
-        insert_circuit($post["circuit_descriptif"], $post["circuit_villedepart"], $post["circuit_paysdepart"], $post["circuit_villearrivee"], $post["circuit_paysarrivee"], $post["circuit_datedepart"], $post["circuit_datearrivee"], $post["circuit_duree"], $post["circuit_places"], $post["circuit_prix"]);
+       insert_circuit($post["circuit_descriptif"], $post["circuit_villedepart"], $post["circuit_paysdepart"], $post["circuit_villearrivee"], $post["circuit_paysarrivee"], $post["circuit_datedepart"], $post["circuit_datearrivee"], $post["circuit_duree"], $post["circuit_places"], $post["circuit_prix"]);
         break;
     case "insertEtape":
         insert_etape($post["etape_circuit"], $post["etape_lieu"], $post["etape_ordre"], $post["etape_date"], $post["etape_duree"]);
