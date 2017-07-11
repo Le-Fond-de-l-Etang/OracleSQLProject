@@ -15,7 +15,10 @@
     </head>
     <body>
         <div class="container">
-            <span><a href="index.php">Index</a> > Lieux</span>
+            <ol class="breadcrumb">
+                <li><a href="index.php">Index</a></li>
+                <li class="active">Lieux</li>
+            </ol
             
             <h2>Liste des lieux :</h2>
             <table class="table table-striped">
@@ -33,13 +36,16 @@
                 <tbody>
                     <?php $lieux = select_lieux();
                     foreach($lieux as $lieu) {
-                        echo "<td>" . $lieu["id"] . "</td>";
-                        echo "<td>" . $lieu["nomLieu"] . "</td>";
-                        echo "<td>" . $lieu["ville"] . "</td>";
-                        echo "<td>" . $lieu["pays"] . "</td>";
-                        echo "<td>" . $lieu["descriptif"] . "</td>";
-                        echo "<td>" . $lieu["prixVisite"] . "</td>";
-                        echo "<td><a href='index.php?action=deleteLieu&actionId=".$lieu["id"]."&view=manageLieux'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></td>";
+                        echo "<tr>";
+                        echo "<td>" . $lieu["ID"] . "</td>";
+                        echo "<td>" . $lieu["NOMLIEU"] . "</td>";
+                        echo "<td>" . $lieu["VILLE"] . "</td>";
+                        echo "<td>" . $lieu["PAYS"] . "</td>";
+                        echo "<td>" . $lieu["DESCRIPTIF"] . "</td>";
+                        echo "<td>" . $lieu["PRIXVISITE"] . "</td>";
+                        echo "<td><a href='#' class='btn btn-warning' data-toggle='modal' data-target='#addLieuModal' data-id='".$lieu["ID"]."'><i class='glyphicon glyphicon-edit'></i></a>";
+                        echo "<td><a href='index.php?action=deleteLieu&actionId=".$lieu["ID"]."&view=manageLieux'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></td>";
+                        echo "</tr>";
                     } ?>
                 </tbody>
             </table>
@@ -66,7 +72,7 @@
                                             <input required class="input-md  textinput textInput form-control" id="lieu_nom" maxlength="30" name="lieu_nom" type="text" />
                                         </div>
                                     </div>
-                                
+                                    <input type="hidden" name="lieu_id" id="lieu_id">
                                     <div class="form-group">
                                         <label for="lieu_ville" class="control-label col-md-4">Ville</label>
                                         <div class="controls col-md-8 ">
@@ -97,7 +103,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                                <button type="submit" class="btn btn-primary">Créer</button>
+                                <button type="submit" id="submit" class="btn btn-primary">Créer</button>
                             </div>
                         </div>
                     </form>
@@ -108,6 +114,7 @@
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+        <script src="assets/js/script.js"></script>
         <script>
             $(".datepicker").datepicker();
         </script>

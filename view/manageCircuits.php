@@ -14,8 +14,11 @@
         </style>
     </head>
     <body>
-        <div class="container">
-            <span><a href="index.php">Index</a> > Circuits</span>
+        <div class="container"> 
+            <ol class="breadcrumb">
+                <li><a href="index.php">Index</a></li>
+                <li class="active">Circuits</li>
+            </ol>
             
             <h2>Liste des circuits :</h2>
             <table class="table table-striped">
